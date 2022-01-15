@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="angular.min.js"></script>
+        <script>
+            var obj=angular.module("myapp",[]);
+            obj.controller("myctrl",function($scope){
+                $scope.arr=['FYBCA','SYBCA','TYBCA'];
+            });
+            obj.controller("myctrl2",function($scope){
+                $scope.arr2=[10,20,30,40,50];
+            });
+        </script>
+    </head>
+    <body ng-app="myapp">
+    <div ng-controller="myctrl">
+      course
+      <select>
+          <option ng-repeat="x in arr">{{x}}</option>
+      </select>
+    </div> 
+    <div ng-controller="myctrl2">
+        <ol>
+            <li ng-repeat="x in arr2">{{x}}</li>
+        </ol>
+    </div>
+    </body>
+</html>

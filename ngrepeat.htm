@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src="angular.min.js"></script>
+    </head>
+    <body ng-app="" ng-init="arr=['FYBCA','SYBCA','TYBCA','FYBBA','SYBBA']">
+        Cource:<select>
+               <option ng-repeat="x in arr">{{x}}</option>
+              </select>
+              <ol>
+                  <li ng-repeat="y in arr">{{y}}</li>
+              </ol>
+        <table border="1">
+            <tr><th>Courses</th></tr>
+            <tr><td ng-repeat="p in arr">{{p}}</td></tr>
+            
+        </table>
+    </body>
+</html>

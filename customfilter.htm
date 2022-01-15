@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="angular.min.js"></script>
+        <script>
+            var obj=angular.module("myapp",[]);
+            
+            obj.filter("gendercheck",function(){
+                return function(gendercheck){
+                    switch(gendercheck){
+                        case 1:
+                        return "Male";
+                        case 2:
+                        return "Female";
+                        case 3:
+                        return "transgender";
+
+                    }
+
+                }
+
+            });
+
+            obj.controller("myctrl",function($scope){
+                $scope.arr=[{rno:1001,sname:"ramesh",gender:1},
+                            {rno:1002,sname:"rashmi",gender:2},
+                            {rno:1003,sname:"ram",gender:1},
+                            {rno:1004,sname:"priti",gender:2},
+                            {rno:1005,sname:"ramesh",gender:3}
+
+                ];
+
+            });
+        </script>
+    </head>
+    <body ng-app="myapp" ng-controller="myctrl">
+        <table border="2">
+         <tr><th>Roll Number</th><th>Student Name</th><th>Gender</th></tr>
+         <tr ng-repeat="x in arr">
+             <td>{{x.rno}}</td>
+             <td>{{x.sname}}</td>
+             <td>{{x.gender|gendercheck}}</td>
+         </tr>
+        </table>
+
+    </body>
+</html>
